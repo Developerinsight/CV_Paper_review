@@ -26,21 +26,25 @@ yielding (c+4)kmn outputs.(c: object class num, 4: coordinates, k: default box n
 ### Loss Function
 <img width="474" alt="image" src="https://github.com/Developerinsight/Paper_review/assets/123748877/b6b3b190-2327-4295-8b13-e6d119880e93">
 
-          confidence loss + weight x localization loss
+confidence loss + weight x localization loss
 
 <img width="451" alt="image" src="https://github.com/Developerinsight/Paper_review/assets/123748877/d1c88a34-9761-4fcf-aa75-b931b0889fd6">
 
+localization loss is a Smooth L1 loss between the predicted box and the ground truth box parameters.
+
 <img width="473" alt="image" src="https://github.com/Developerinsight/Paper_review/assets/123748877/15b76e4f-2593-4610-bbc3-180609cc863e">
+
+confidence loss is the softmax loss over multiple classes confidences
+
+### Analysis
 
 <img width="511" alt="image" src="https://github.com/Developerinsight/Paper_review/assets/123748877/418dac68-8218-4d54-9b4e-ffbabb91e0b0">
 
-the model loss is a weighted sum between localization loss(smooth L1) and confidence loss(Softmax).
-the basic element for predicting parameters of a potential detection is a 3x3xp small kernel that produces either a score for a category,
-or a shape offset relative to the default box coordinates.
-ground truth information needs to be assigned to specific outputs in the fixed set of detector outputs.
+Data augmentation is crucial
+More default box shapes is better
+Multiple output layers at different resolutions is better
+
+### Else
 begining by matching each ground truth box to the default box with the best jaccard overlap higher than a threshold(0.5).
-within the SSD framework, the default boxes do not necessary need to correspond to the actual receptive fields of each layer.
-so that specific feature maps learn to be responsive to particular scales of the objects.
-by combining predictions for all default boxes with different scales and aspect ratios from all locations of many feature maps, 
-we have a diverse set of predictions, covering various input object sizes and shapes.
+
 highest negative anchor trains only so that training the background and the ratio between the negatives and positives is at most 3:1.
