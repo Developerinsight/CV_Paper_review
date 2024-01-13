@@ -1,4 +1,5 @@
 # Very Deep Convolutional Network For Large-Scale Image Recognition
+Link: https://arxiv.org/pdf/1409.1556.pdf
 
 ## Key Points
 ### pushing the depth to 16-19 weight layers + small (3x3) convlolution filters(eqaul to receptive field)
