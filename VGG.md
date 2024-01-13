@@ -17,7 +17,11 @@ the reason is
 * subtract mean rgb value from each pixel to data normalization
 * use 3x3 receptive field which is the smallest size to capture the notion of left/down, up/down, center.
 * Relu function for conv layers - Relu(x) = max(0, x) => increase non-linear so that we can learn complicated pattern.
+  <img width="496" alt="image" src="https://github.com/Developerinsight/Paper_review/assets/123748877/6262676e-6aa2-41c3-b95f-ea884a287d8d">
+
 * Soft max function for fully connected layer => predict probability belonging to each class.
+
+ <img width="296" alt="image" src="https://github.com/Developerinsight/Paper_review/assets/123748877/395159f4-b5ee-453d-b69b-bd6e86ead2b2">
 
 
 ### Training
