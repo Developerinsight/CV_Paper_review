@@ -30,7 +30,7 @@ in forward propagation, it trains h(x)[f(x)+x], and in backward propagation, it 
 ###### optimizer.zero_grad()
 ###### loss.backward() 
 * calculate network weights gradient about loss function
-* compute weight loss gradient from H(x) backwards to input x
+* compute weight loss gradient from H(x) backwards to input x so that f(x) would be zero.
   
 
 ### How to resolve vanishing gradient, overfitting, computation increase?
